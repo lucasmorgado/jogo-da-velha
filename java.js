@@ -5,9 +5,9 @@ function casasIguais(a, b, c){
        // var casaA = $("#casa"+a);
        // var casaB = $("#casa"+b);
         //var casaC = $("#casa"+c);
-        var bgA = $("#casa"+a).css("bgColor");
-        var bgB = $("#casa"+b).css("bgColor");
-        var bgC = $("#casa"+c).css("bgColor");
+        var bgA = $("#casa"+a).css("background-color");
+        var bgB = $("#casa"+b).css("background-color");
+        var bgC = $("#casa"+c).css("background-color");
         if( (bgA == bgB) && (bgB == bgC) && (bgA != "none" && bgA != "")){
             if(bgA.bgColor("red") >= 0)
                 vencedor = "1";
@@ -30,13 +30,13 @@ function casasIguais(a, b, c){
         }
     }
       $(".casa").click(function(){
-        var bg = $(this).css("red");
-        var bg2 = $(this).css("blue");
+        var bg = $(this).css("background-color", "red");
+        var bg2 = $(this).css("background-color", "blue");
         if(bg == "none" || bg == "" && bg2 == "none" || bg2 == "") {
-            var color = + vez.toString() + "red)";
-            var color2 = vez.toString() + "blue)";
-            $(this).css("bgColor", color);
-            $(this).css("bgColor", color2);
+            var color = + vez.toString() + "red";
+            var color2 = vez.toString() + "blue";
+            $(this).css("background-color", color);
+            $(this).css("background-color", color2);
             vez = (vez == 1? 2:1);
             verificarFimDeJogo();
         }
