@@ -1,5 +1,6 @@
 var vez = 1;
 var vencedor = "";
+let aux = 0;
 
 function casasIguais(a, b, c){
        // var casaA = $("#casa"+a);
@@ -30,15 +31,22 @@ function casasIguais(a, b, c){
         }
     }
       $(".casa").click(function(){
-        var bg = $(this).css("background-color", "red");
-        var bg2 = $(this).css("background-color", "blue");
-        if(bg == "none" || bg == "" && bg2 == "none" || bg2 == "") {
-            var color = + vez.toString() + "red";
-            var color2 = vez.toString() + "blue";
-            $(this).css("background-color", color);
-            $(this).css("background-color", color2);
-            vez = (vez == 1? 2:1);
-            verificarFimDeJogo();
+        var bg = $(this).css("background-color");
+          console.log(bg.toString());
+      if(bg.toString() == "rbga(0,0,0,0)" && aux == 0){
+
+        if( aux == 1 || aux == 0) {
+            aux =2;
+
+             console.log("red");
+            $(this).css("background-color", "red");
+
+        } else if(aux ==2 ){
+            aux=1;
+            console.log("blue");
+            $(this).css("background-color", "blue");
+
         }
+      }
     });
 
